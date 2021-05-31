@@ -23,7 +23,7 @@ function pokemonsController() {
   async function getById(req, res) {
     try {
       const pokemonById = await Pokemon.findById(
-        req.params.pokemon._id
+        req.params.pokemonId
       );
       res.json(pokemonById);
     } catch (error) {
@@ -36,7 +36,7 @@ function pokemonsController() {
   async function updateById(req, res) {
     try {
       const updatedPokemon = await Pokemon.findByIdAndUpdate(
-        req.params.pokemon._id,
+        req.params.pokemonId,
         req.body,
         { new: true }
       );
@@ -49,7 +49,7 @@ function pokemonsController() {
 
   async function deleteById(req, res) {
     try {
-      await Pokemon.findByIdAndDelete(req.params.pokemonId._id);
+      await Pokemon.findByIdAndDelete(req.params.pokemonId);
       res.status(204);
       res.json();
     } catch (error) {
