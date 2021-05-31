@@ -10,7 +10,7 @@ function pokemonsRouter() {
     .post(pokemonsController.createOne);
 
   routes
-    .route('/:heroId')
+    .route('/:pokemonId')
     .get(pokemonsController.getById)
     .put(pokemonsController.updateById)
     .delete(pokemonsController.deleteById);

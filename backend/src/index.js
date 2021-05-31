@@ -13,8 +13,8 @@ mongoose.connect(
   process.env.DDBB_URL,
   {
     useUnifiedTopology: true,
-    useNewUrlParser: true,
-  },
+    useNewUrlParser: true
+  }
 );
 
 server.use(cors());
@@ -23,7 +23,7 @@ server.use(morgan('dev'));
 
 const pokemonsRouter = require('./routes/pokemonsRouter');
 
-server.use('/api/pokemons',pokemonsRouter);
+server.use('/api/pokemons', pokemonsRouter);
 
 server.listen(port,
   () => debug(`Server is running in ${chalk.yellow(`localhost:${port}`)}`));

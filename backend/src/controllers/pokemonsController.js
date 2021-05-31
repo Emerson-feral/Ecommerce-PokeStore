@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 const debug = require('debug')('app:heroesController');
 const Pokemon = require('../model/pokemonModel');
 
@@ -22,7 +23,7 @@ function pokemonsController() {
   async function getById(req, res) {
     try {
       const pokemonById = await Pokemon.findById(
-        req.params.pokemon._id,
+        req.params.pokemon._id
       );
       res.json(pokemonById);
     } catch (error) {
@@ -37,7 +38,7 @@ function pokemonsController() {
       const updatedPokemon = await Pokemon.findByIdAndUpdate(
         req.params.pokemon._id,
         req.body,
-        { new: true },
+        { new: true }
       );
       res.json(updatedPokemon);
     } catch (error) {
@@ -48,7 +49,7 @@ function pokemonsController() {
 
   async function deleteById(req, res) {
     try {
-      await Pokemon.findByIdAndDelete(req.params.pokemon._id);
+      await Pokemon.findByIdAndDelete(req.params.pokemonId._id);
       res.status(204);
       res.json();
     } catch (error) {
@@ -62,7 +63,7 @@ function pokemonsController() {
     createOne,
     getById,
     updateById,
-    deleteById,
+    deleteById
   };
 }
 
