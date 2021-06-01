@@ -3,27 +3,27 @@ const cors = require('cors');
 const chalk = require('chalk');
 const debug = require('debug')('server');
 const morgan = require('morgan');
-const mongoose = require('mongoose');
+const passport = require('passport');
+const authRoutes = require('./routes/authRoutes');
+
 require('dotenv').config();
+
+require('./passport/passport.config');
+
+require('./ddbb/mongoose.config');
 
 const server = express();
 const port = process.env.PORT || 2021;
 
-mongoose.connect(
-  process.env.DDBB_URL,
-  {
-    useUnifiedTopology: true,
-    useNewUrlParser: true
-  }
-);
-
 server.use(cors());
 server.use(express.json());
 server.use(morgan('dev'));
+server.use(express.urlencoded({ extended: false }));
 
 const pokemonsRouter = require('./routes/pokemonsRouter');
 
-server.use('/api/pokemons', pokemonsRouter);
+server.use('/', authRoutes);
+server.use('/api/pokemons', passport.authenticate('jwt', { session: false }), pokemonsRouter);
 
 server.listen(port,
   () => debug(`Server is running in ${chalk.yellow(`localhost:${port}`)}`));
