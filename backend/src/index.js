@@ -21,9 +21,12 @@ server.use(morgan('dev'));
 server.use(express.urlencoded({ extended: false }));
 
 const pokemonsRouter = require('./routes/pokemonsRouter');
+const userRouter = require('./routes/user.routes');
 
 server.use('/', authRoutes);
 server.use('/api/pokemons', passport.authenticate('jwt', { session: false }), pokemonsRouter);
+server.use('/user', passport.authenticate('jwt', { session: false }),
+  userRouter);
 
 server.listen(port,
   () => debug(`Server is running in ${chalk.yellow(`localhost:${port}`)}`));
