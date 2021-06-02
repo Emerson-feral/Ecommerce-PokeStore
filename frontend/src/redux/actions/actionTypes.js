@@ -1,3 +1,3 @@
 export default {
-  LOAD_POKEMONS: 'POKEMONS'
+  LOAD_POKEMONS: 'LOAD_POKEMONS'
 };

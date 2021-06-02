@@ -1,4 +1,8 @@
-nav {
-  background-color: red;
+*{
+    padding: 0;
+    margin: 0;
 }
-/*# sourceMappingURL=App.css.map */
+
+body{
+    min-width: 375px;
+}

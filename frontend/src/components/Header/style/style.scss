@@ -1,0 +1,11 @@
+@import '../../../style/color';
+
+header{
+    display: flex;
+    background-color: $red-pokemon;
+    height: 5em;
+    width:100% ;
+    justify-content: space-between;
+}
+
+
