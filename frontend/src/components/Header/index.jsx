@@ -6,6 +6,7 @@ import {
   Link
 } from 'react-router-dom';
 import ProductList from '../ProductList';
+import Slider from '../Carousel';
 import './style/style.css';
 
 function Header() {
@@ -22,7 +23,11 @@ function Header() {
         </div>
       </header>
       <Switch>
-        <Route exact path="/" />
+        <Route exact path="/">
+          {' '}
+          <Slider />
+          {' '}
+        </Route>
         <Route path="/Productlist">
           <ProductList />
         </Route>

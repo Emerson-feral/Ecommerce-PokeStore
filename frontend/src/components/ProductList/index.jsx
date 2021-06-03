@@ -10,18 +10,16 @@ function ProductList({ pokemons, dispatch }) {
 
   return (
     <>
-      <ul>
+      <ul title="pokemonList">
         {
               pokemons.map((item) => (
-                <li>
+                <li key={pokemons}>
                   <img src={item.avatarImage} alt="avatar" />
-                  {item.name}
                   {' '}
                 </li>
               ))
           }
       </ul>
-
     </>
   );
 }
