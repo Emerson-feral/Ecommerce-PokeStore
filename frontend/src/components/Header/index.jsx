@@ -6,6 +6,7 @@ import {
   Link
 } from 'react-router-dom';
 import ProductList from '../ProductList';
+import ProductDetail from '../ProductDetail';
 import Slider from '../Carousel';
 import './style/style.css';
 
@@ -30,6 +31,9 @@ function Header() {
         </Route>
         <Route path="/Productlist">
           <ProductList />
+        </Route>
+        <Route path="/detail/:pokemonId">
+          <ProductDetail />
         </Route>
       </Switch>
     </BrowserRouter>
