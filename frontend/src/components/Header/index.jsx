@@ -9,7 +9,7 @@ import ProductList from '../ProductList';
 import ProductDetail from '../ProductDetail';
 import LootBox from '../LootBox';
 import Slider from '../Carousel';
-import './style/style.css';
+import './style/Header-style.css';
 
 function Header() {
   return (

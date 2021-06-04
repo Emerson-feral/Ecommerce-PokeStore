@@ -1,7 +1,10 @@
 .lootBox{
+   display: flex;
+   justify-content: center;
     img{
+        border-radius: 10px;
         margin-top: 1em;
-        width: 25em;
-        border-style: solid 1px black;
+        width: 90vw;
+        border: solid 1.8px black;
     }
 }

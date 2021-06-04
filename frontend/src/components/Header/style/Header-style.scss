@@ -1,0 +1,22 @@
+@import '../../../style/color';
+
+header{
+    background-color: $red-pokemon;
+    display: flex;
+    align-items: center;
+    height: 5em;
+    justify-content: space-between;
+    width:100% ;
+}
+
+.navBar {
+    margin-left: 20px;
+    a{
+        padding: 0.5em;
+        text-decoration: none;
+        margin-right: 5px;
+        background-color: $lightBlue-pokemon;
+        border: #3d3d3d 1px solid;
+        border-radius: 4px;
+    }
+}

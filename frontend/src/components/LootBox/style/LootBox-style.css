@@ -1,6 +1,16 @@
+.lootBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .lootBox img {
+  border-radius: 10px;
   margin-top: 1em;
-  width: 25em;
-  border-style: solid 1px black;
+  width: 90vw;
+  border: solid 1.8px black;
 }
 /*# sourceMappingURL=LootBox-style.css.map */

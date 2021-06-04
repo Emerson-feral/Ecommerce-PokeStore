@@ -1,9 +1,13 @@
 .Carousel {
-  width: 23em;
-  height: 15em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .Carousel img {
-  width: 13em;
+  height: 15em;
 }
 /*# sourceMappingURL=Carousel-style.css.map */
