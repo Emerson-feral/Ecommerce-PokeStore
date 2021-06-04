@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { loadPokemons } from '../../redux/actions/actionCreators';
+import './style/LootBox-style.css';
 
 function LootBox({ pokemons, dispatch }) {
   useEffect(() => {
@@ -18,9 +19,11 @@ function LootBox({ pokemons, dispatch }) {
 
   return (
     <>
-      <Link to={`/detail/${currentPokemon?._id}`}>
-        <img src="https://i.ibb.co/HggfnHV/who-Ist-This-Pokemon.webp" alt="who-Ist-This-Pokemon" />
-      </Link>
+      <div className="lootBox">
+        <Link to={`/detail/${currentPokemon?._id}`}>
+          <img src="https://i.ibb.co/HggfnHV/who-Ist-This-Pokemon.webp" alt="who-Ist-This-Pokemon" />
+        </Link>
+      </div>
       ;
     </>
   );

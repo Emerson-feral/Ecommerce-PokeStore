@@ -6,6 +6,7 @@ import Carousel from 'react-elastic-carousel';
 import { connect } from 'react-redux';
 /* import { PropTypes } from 'prop-types'; */
 import { loadPokemons } from '../../redux/actions/actionCreators';
+import './styles/Carousel-style.css';
 
 function Slider({ pokemons, dispatch }) {
   useEffect(() => {
@@ -13,7 +14,7 @@ function Slider({ pokemons, dispatch }) {
   }, []);
 
   return (
-    <Carousel>
+    <Carousel className="Carousel">
       {
         pokemons.slice(1, 4).map((pokemon) => (
           <Link to={`/detail/${pokemon._id}`}>
