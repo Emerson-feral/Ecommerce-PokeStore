@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import ProductList from '../ProductList';
 import ProductDetail from '../ProductDetail';
+import LootBox from '../LootBox';
 import Slider from '../Carousel';
 import './style/style.css';
 
@@ -28,6 +29,7 @@ function Header() {
           {' '}
           <Slider />
           {' '}
+          <LootBox />
         </Route>
         <Route path="/Productlist">
           <ProductList />
