@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { loadPokemons } from '../../redux/actions/actionCreators';
+import './style/ProductList-style.css';
 
 function ProductList({ pokemons, dispatch }) {
   useEffect(() => {
@@ -12,12 +13,14 @@ function ProductList({ pokemons, dispatch }) {
 
   return (
     <>
-      <ul title="pokemonList">
+      <ul title="pokemonList" className="pokemonlist-container">
         {
           pokemons.map((pokemon) => (
-            <Link key={pokemon._id} to={`/detail/${pokemon._id}`}>
-              <img src={pokemon.avatarImage} alt={pokemon.name} />
-            </Link>
+            <li>
+              <Link key={pokemon._id} to={`/detail/${pokemon._id}`}>
+                <img src={pokemon.avatarImage} alt={pokemon.name} />
+              </Link>
+            </li>
           ))
         }
       </ul>

@@ -1,0 +1,16 @@
+.pokemonlist-container{
+    margin: 10px;
+    display:flex;
+    flex-wrap: wrap;
+    
+    li{
+        list-style: none;
+        margin: 5px;
+    }
+    
+    img{
+        width: 10em;
+        border:black solid 0.5px;
+        border-radius: 20px;
+    }
+}
