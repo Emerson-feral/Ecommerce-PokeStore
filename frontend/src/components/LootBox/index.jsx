@@ -19,6 +19,9 @@ function LootBox({ pokemons, dispatch }) {
 
   return (
     <>
+      <div className="container-title">
+        <h2>Mystery box</h2>
+      </div>
       <div className="lootBox">
         <Link to={`/detail/${currentPokemon?._id}`}>
           <img src="https://i.ibb.co/HggfnHV/who-Ist-This-Pokemon.webp" alt="who-Ist-This-Pokemon" />

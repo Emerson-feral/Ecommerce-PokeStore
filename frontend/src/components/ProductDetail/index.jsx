@@ -18,27 +18,22 @@ function ProductDetail({ selectedPokemon, dispatch }) {
       <div className="detail-container__image">
         <img src={selectedPokemon.avatarImage} alt={selectedPokemon.name} />
       </div>
-      <div className="description-container">
-        <h2>
+      <div className="information-container">
+        <h2 className="information-container__title">
           {selectedPokemon.name}
           {' '}
         </h2>
-        <p>
+        <p className="information-container__description">
           {selectedPokemon.description}
           {' '}
         </p>
-        <p>
-          Type:
-          {selectedPokemon.type}
-          {' '}
+        <p className="information-container__type">
+          {`Type: ${selectedPokemon.type}`}
         </p>
-        <p>
-          Price:
-          {selectedPokemon.price}
-          {' '}
+        <p className="information-container__price">
+          {`Price: ${selectedPokemon.price}`}
         </p>
         <button type="button">Add to cart</button>
-
       </div>
     </div>
   );
