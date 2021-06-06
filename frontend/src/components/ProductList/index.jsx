@@ -14,20 +14,16 @@ function ProductList({ pokemons, dispatch }) {
     console.log(event);
   }
   const uniqueType = [...new Set(pokemons?.map((item) => item.type))];
+
   return (
     <>
       <div className="filter">
-        <form onSubmit={handleClickFilter}>
-          <label htmlFor="filter">
-            <select>
-              {
+        <select onChange={(e) => handleClickFilter(e.target.value)}>
+          {
                 uniqueType.map((type) => <option value={type}>{type}</option>)
               }
-            </select>
-          </label>
-          <input type="submit" value="Filter" />
-
-        </form>
+        </select>
+        <button type="button">Filter</button>
       </div>
       <ul title="pokemonList" className="pokemonlist-container">
         {
