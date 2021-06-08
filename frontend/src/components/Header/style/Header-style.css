@@ -1,0 +1,31 @@
+header {
+  background-color: #ff1f1f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 5em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.navBar {
+  margin-left: 20px;
+}
+
+.navBar a {
+  padding: 0.5em;
+  text-decoration: none;
+  margin-right: 5px;
+  background-color: #5db9ff;
+  border: #3d3d3d 1px solid;
+  border-radius: 4px;
+}
+/*# sourceMappingURL=Header-style.css.map */

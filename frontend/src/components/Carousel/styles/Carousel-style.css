@@ -1,0 +1,14 @@
+.Carousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 7em;
+}
+
+.Carousel img {
+  height: 10em;
+}
+/*# sourceMappingURL=Carousel-style.css.map */

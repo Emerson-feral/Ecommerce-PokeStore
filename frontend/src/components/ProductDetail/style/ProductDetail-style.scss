@@ -1,0 +1,51 @@
+@import '../../../style/color';
+
+.detail-container{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+
+    &__image{
+        /* background-color: red; */
+        width: 35em;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        height: 25em;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border:black solid 1px;
+        border-radius: 20px;
+
+        img{
+            width: 15em;
+            height: 30em;
+            padding-left: 2.5em;
+            
+        }
+        
+    }
+   
+}
+
+.information-container{
+    
+    button{
+        text-decoration: none;
+        background-color: $yellow-pokemon;
+        width: 25vw;
+        border: #3d3d3d 1px solid;
+        border-radius: 4px;
+        margin-top: 1em;
+    }
+    &__description{
+        margin-top: 1em;
+    }
+    &__type{
+        margin-top: 0.5em;
+    }
+    &__price{
+        margin-top: 0.5em;
+    }
+}
