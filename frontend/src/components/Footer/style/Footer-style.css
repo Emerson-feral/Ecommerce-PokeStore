@@ -1,8 +1,9 @@
-footer {
+.footer-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   bottom: 0;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -15,7 +16,7 @@ footer {
   height: 3em;
 }
 
-footer img {
+.footer-container__image {
   height: 2.2em;
 }
 /*# sourceMappingURL=Footer-style.css.map */

@@ -4,8 +4,8 @@ import './style/Footer-style.css';
 function Footer() {
   return (
 
-    <footer>
-      <img src="https://i.ibb.co/QnkKPvq/pokestore.png" alt="pokestore" />
+    <footer className="footer-container">
+      <img className="footer-container__image" src="https://i.ibb.co/QnkKPvq/pokestore.png" alt="pokestore" />
     </footer>
   );
 }
