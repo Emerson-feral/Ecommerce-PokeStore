@@ -20,14 +20,14 @@ function ProductList({ pokemons, dispatch, user }) {
 
   return (
     <>
-      <div className="filter">
-        <select onChange={(e) => handleClickFilter(e.target.value)}>
-          <option>Select type</option>
+      <div className="filter-container">
+        <select className="filter-container__select" onChange={(e) => handleClickFilter(e.target.value)}>
+          <option>Type</option>
           {
                 uniqueType?.map((type) => <option value={type}>{type}</option>)
               }
         </select>
-        <button type="button" onClick={() => setTypePokemon(null)}>Clear</button>
+        <button className="filter-container__button" type="button" onClick={() => setTypePokemon(null)}>Clear</button>
       </div>
       <div className="yesOrNo">
         {
@@ -38,9 +38,8 @@ function ProductList({ pokemons, dispatch, user }) {
                   pokemons.map((pokemon) => (
                     <Link to={`detail/${pokemon._id}`}>
                       {' '}
-                      <li>
-                        <img src={pokemon.avatarImage} alt={pokemon.name} />
-                        {' '}
+                      <li className="pokemonlist-container__list" key={pokemon._id}>
+                        <img className="pokemonlist-container__image" src={pokemon.avatarImage} alt={pokemon.name} />
                       </li>
                       {' '}
                     </Link>
@@ -54,7 +53,9 @@ function ProductList({ pokemons, dispatch, user }) {
                   pokemons.filter((item) => item.type === typePokemon).map((pokemon) => (
                     <Link to={`detail/${pokemon._id}`}>
                       {' '}
-                      <img src={pokemon.avatarImage} alt={pokemon.name} />
+                      <li>
+                        <img className="pokemonlist-container__image" src={pokemon.avatarImage} alt={pokemon.name} />
+                      </li>
                       {' '}
                     </Link>
                   ))

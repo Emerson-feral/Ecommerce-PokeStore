@@ -1,6 +1,6 @@
 @import '../../../style/color';
 
-header{
+.header-container{
     background-color: $red-pokemon;
     display: flex;
     align-items: center;
@@ -9,11 +9,13 @@ header{
     height: 5em;
     justify-content: space-between;
     width:100% ;
-}
-
-.navBar {
-    margin-left: 20px;
-    a{
+    
+    &__navBar {
+        margin-left: 20px;
+        
+    }
+    
+    &__link{
         padding: 0.5em;
         text-decoration: none;
         margin-right: 5px;
@@ -22,3 +24,4 @@ header{
         border-radius: 4px;
     }
 }
+

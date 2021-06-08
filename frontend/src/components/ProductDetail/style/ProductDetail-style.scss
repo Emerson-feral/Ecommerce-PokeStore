@@ -3,41 +3,34 @@
 .detail-container{
     display: flex;
     align-items: center;
-    height: 100vh;
-
-    &__image{
-        /* background-color: red; */
-        width: 35em;
-        margin-left: 0.5em;
-        margin-right: 0.5em;
-        height: 25em;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border:black solid 1px;
-        border-radius: 20px;
-
-        img{
-            width: 15em;
-            height: 30em;
-            padding-left: 2.5em;
-            
-        }
-        
-    }
-   
+    height: 70vh;
 }
 
+.image-container{
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    border: black solid 1px;
+    border-radius: 20px;
+    margin: 0.5em;
+
+    &__item{
+        max-width:100%;
+        max-height:100%;
+    }
+}
+
+
 .information-container{
-    
-    button{
+    width: 55vw;
+    &__button{
         text-decoration: none;
-        background-color: $yellow-pokemon;
+        background-color:$yellow-pokemon;
         width: 25vw;
         border: #3d3d3d 1px solid;
         border-radius: 4px;
         margin-top: 1em;
+        height: 5vh;
     }
     &__description{
         margin-top: 1em;

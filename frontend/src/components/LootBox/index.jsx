@@ -1,20 +1,21 @@
 /* eslint-disable no-underscore-dangle */
-/* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { loadPokemons } from '../../redux/actions/actionCreators';
 import './style/LootBox-style.css';
 
-function LootBox({ pokemons, dispatch }) {
+function LootBox() {
+  const dispatch = useDispatch();
+  const allPokemons = useSelector(({ pokemons }) => ({ pokemons }));
   useEffect(() => {
-    if (!pokemons.length)dispatch(loadPokemons());
+    if (!allPokemons.pokemons.length)dispatch(loadPokemons());
   }, []);
 
   let currentPokemon;
-  if (pokemons !== null) {
-    const randomPokemon = Math.floor(Math.random() * pokemons.length);
-    currentPokemon = pokemons[randomPokemon];
+  if (allPokemons.pokemons !== null) {
+    const randomPokemon = Math.floor(Math.random() * allPokemons.pokemons.length);
+    currentPokemon = allPokemons.pokemons[randomPokemon];
   }
 
   return (
@@ -32,8 +33,4 @@ function LootBox({ pokemons, dispatch }) {
   );
 }
 
-function mapStateToProps({ pokemons }) {
-  return { pokemons };
-}
-
-export default connect(mapStateToProps)(LootBox);
+export default LootBox;

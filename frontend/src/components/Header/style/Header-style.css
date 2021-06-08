@@ -1,4 +1,4 @@
-header {
+.header-container {
   background-color: #ff1f1f;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -16,11 +16,11 @@ header {
   width: 100%;
 }
 
-.navBar {
+.header-container__navBar {
   margin-left: 20px;
 }
 
-.navBar a {
+.header-container__link {
   padding: 0.5em;
   text-decoration: none;
   margin-right: 5px;

@@ -6,12 +6,12 @@ import './style/Header-style.css';
 
 function Header() {
   return (
-    <header>
-      <nav className="navBar">
-        <Link to="/">Home</Link>
-        <Link to="/Productlist">Products</Link>
+    <header className="header-container">
+      <nav className="header-container__navBar">
+        <Link className="header-container__link" to="/">Home</Link>
+        <Link className="header-container__link" to="/Productlist">Products</Link>
       </nav>
-      <div className="cart">
+      <div className="cart-container">
         <button type="button">Login</button>
         <button type="button">Cart</button>
       </div>

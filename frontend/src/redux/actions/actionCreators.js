@@ -1,7 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import axios from 'axios';
 import actionTypes from './actionTypes';
-import POKEMONS from '../../constants/mockPokemons';
 
 const url = 'http://localhost:1996/api/pokemons/';
 
@@ -24,17 +23,12 @@ export function loadPokemons(user) {
 }
 
 export function getPokemonById(pokemonId) {
-  const pokemon = POKEMONS.find((current) => current._id === pokemonId);
-  return {
-    type: actionTypes.LOAD_POKEMON,
-    pokemon
-  };
-}
-
-export function filterPokemon(filterType) {
-  return {
-    type: actionTypes.FILTER_POKEMON,
-    filterType
+  return async (dispatch) => {
+    const { data } = await axios(`${url}/${pokemonId}`);
+    dispatch({
+      type: actionTypes.LOAD_POKEMON,
+      pokemon: data
+    });
   };
 }
 

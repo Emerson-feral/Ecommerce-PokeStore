@@ -1,4 +1,4 @@
-.Carousel {
+.Carousel-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8,7 +8,7 @@
   margin-top: 7em;
 }
 
-.Carousel img {
+.Carousel-container__image {
   height: 10em;
 }
 /*# sourceMappingURL=Carousel-style.css.map */

@@ -1,10 +1,10 @@
-.Carousel{
+.Carousel-container{
     display: flex;
     justify-content: center;
     margin-top: 7em;
 
     
-    img{
+    &__image{
         height: 10em;
     }
 }

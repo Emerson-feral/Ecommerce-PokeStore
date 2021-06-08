@@ -1,12 +1,13 @@
-/* eslint-disable import/no-cycle */
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { PropTypes } from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import userLogin from '../../redux/actions/actionCreators';
 import './style/Login-style.css';
 
-function Login({ user, dispatch }) {
+function Login() {
+  const dispatch = useDispatch();
+  const authUser = useSelector(({ user }) => ({ user }));
+
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
 
@@ -24,7 +25,7 @@ function Login({ user, dispatch }) {
 
   return (
 
-    !user?.token
+    !authUser.user.token
       ? (
         <>
           <div className="login-container">
@@ -42,12 +43,4 @@ function Login({ user, dispatch }) {
   );
 }
 
-Login.propTypes = {
-  user: PropTypes.shape([]).isRequired,
-  dispatch: PropTypes.func.isRequired
-};
-function mapStateToProps({ user }) {
-  return { user };
-}
-
-export default connect(mapStateToProps)(Login);
+export default Login;
