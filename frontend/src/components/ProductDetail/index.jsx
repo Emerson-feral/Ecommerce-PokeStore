@@ -1,12 +1,13 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { PropTypes } from 'prop-types';
 import { getPokemonById } from '../../redux/actions/actionCreators';
 import './style/ProductDetail-style.css';
 
-function ProductDetail({ selectedPokemon, dispatch }) {
+function ProductDetail() {
+  const dispatch = useDispatch();
+  const selectedPokemon = useSelector((store) => store.selectedPokemon);
   const { pokemonId } = useParams();
 
   useEffect(() => {
@@ -39,16 +40,4 @@ function ProductDetail({ selectedPokemon, dispatch }) {
   );
 }
 
-ProductDetail.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  selectedPokemon: PropTypes.shape({
-    name: PropTypes.string
-  }).isRequired
-};
-
-function mapStateToProps({ selectedPokemon }) {
-  return {
-    selectedPokemon
-  };
-}
-export default connect(mapStateToProps)(ProductDetail);
+export default ProductDetail;

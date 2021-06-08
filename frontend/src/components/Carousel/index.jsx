@@ -1,14 +1,14 @@
 /* eslint-disable no-underscore-dangle */
-/* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Carousel from 'react-elastic-carousel';
-import { connect } from 'react-redux';
-/* import { PropTypes } from 'prop-types'; */
+import { useDispatch, useSelector } from 'react-redux';
 import { loadPokemons } from '../../redux/actions/actionCreators';
 import './styles/Carousel-style.css';
 
-function Slider({ pokemons, dispatch }) {
+function Slider() {
+  const dispatch = useDispatch();
+  const pokemons = useSelector((store) => store.pokemons);
   useEffect(() => {
     if (!pokemons.length)dispatch(loadPokemons());
   }, []);
@@ -25,9 +25,5 @@ function Slider({ pokemons, dispatch }) {
     </Carousel>
   );
 }
-function mapStateToProps({ pokemons }) {
-  return {
-    pokemons
-  };
-}
-export default connect(mapStateToProps)(Slider);
+
+export default Slider;

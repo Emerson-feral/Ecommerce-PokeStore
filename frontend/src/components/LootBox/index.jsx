@@ -1,12 +1,14 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { loadPokemons } from '../../redux/actions/actionCreators';
 import './style/LootBox-style.css';
 
-function LootBox({ pokemons, dispatch }) {
+function LootBox() {
+  const dispatch = useDispatch();
+  const pokemons = useSelector((store) => store.pokemons);
   useEffect(() => {
     if (!pokemons.length)dispatch(loadPokemons());
   }, []);
@@ -32,8 +34,4 @@ function LootBox({ pokemons, dispatch }) {
   );
 }
 
-function mapStateToProps({ pokemons }) {
-  return { pokemons };
-}
-
-export default connect(mapStateToProps)(LootBox);
+export default LootBox;
