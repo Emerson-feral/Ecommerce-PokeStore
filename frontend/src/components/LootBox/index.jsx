@@ -9,7 +9,7 @@ function LootBox() {
   const dispatch = useDispatch();
   const pokemons = useSelector((store) => store.pokemons);
   useEffect(() => {
-    if (!pokemons.length)dispatch(loadPokemons());
+    if (!pokemons?.length)dispatch(loadPokemons());
   }, []);
 
   let currentPokemon;
@@ -25,7 +25,7 @@ function LootBox() {
       </div>
       <div className="lootBox">
         <Link to={`/detail/${currentPokemon?._id}`}>
-          <img src="https://i.ibb.co/HggfnHV/who-Ist-This-Pokemon.webp" alt="who-Ist-This-Pokemon" />
+          <img className="lootBox-image" src="https://i.ibb.co/HggfnHV/who-Ist-This-Pokemon.webp" alt="who-Ist-This-Pokemon" />
         </Link>
       </div>
       ;

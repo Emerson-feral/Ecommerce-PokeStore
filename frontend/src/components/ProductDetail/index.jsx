@@ -14,8 +14,8 @@ function ProductDetail() {
   }, [pokemonId]);
   return (
     <div className="detail-container">
-      <div className="detail-container__image">
-        <img src={selectedPokemon.avatarImage} alt={selectedPokemon.name} />
+      <div className="image-container">
+        <img className="image-container__item" src={selectedPokemon.avatarImage} alt={selectedPokemon.name} />
       </div>
       <div className="information-container">
         <h2 className="information-container__title">
@@ -32,7 +32,7 @@ function ProductDetail() {
         <p className="information-container__price">
           {`Price: ${selectedPokemon.price}`}
         </p>
-        <button type="button" onClick={() => dispatch(addToCart(selectedPokemon))}>Add to cart</button>
+        <button className="information-container__button" type="button" onClick={() => dispatch(addToCart(selectedPokemon))}>Add to cart</button>
       </div>
     </div>
   );

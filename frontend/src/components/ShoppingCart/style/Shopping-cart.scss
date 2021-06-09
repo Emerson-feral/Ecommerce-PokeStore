@@ -1,0 +1,42 @@
+.empty-container{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    background-image: url("https://i.ibb.co/v3JWj0H/sad-Cart-Invert.jpg");
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &__title{
+     margin-top: 3em;   
+    }
+    
+}
+
+.cartlist-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+ 
+}
+
+.products-container{
+    border-spacing: 1px;    
+    &__item{
+        padding: 1em;
+    } 
+}
+
+.screen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: black solid 1px;
+    
+    height: 25vh;
+}
+
+
+

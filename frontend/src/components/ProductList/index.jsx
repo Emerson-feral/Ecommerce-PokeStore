@@ -56,7 +56,7 @@ function ProductList() {
                   pokemons.filter((item) => item.type === typePokemon).map((pokemon) => (
                     <Link to={`detail/${pokemon._id}`}>
                       {' '}
-                      <li key={pokemon._id}>
+                      <li className="pokemonlist-container__list" key={pokemon._id}>
                         <img className="pokemonlist-container__image" src={pokemon.avatarImage} alt={pokemon.name} />
                       </li>
                       {' '}
