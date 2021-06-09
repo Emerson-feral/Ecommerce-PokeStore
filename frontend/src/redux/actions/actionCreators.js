@@ -1,7 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import axios from 'axios';
 import actionTypes from './actionTypes';
-import POKEMONS from '../../constants/mockPokemons';
 
 const url = 'http://localhost:1996/api/pokemons/';
 
@@ -24,17 +23,12 @@ export function loadPokemons(user) {
 }
 
 export function getPokemonById(pokemonId) {
-  const pokemon = POKEMONS.find((current) => current._id === pokemonId);
-  return {
-    type: actionTypes.LOAD_POKEMON,
-    pokemon
-  };
-}
-
-export function filterPokemon(filterType) {
-  return {
-    type: actionTypes.FILTER_POKEMON,
-    filterType
+  return async (dispatch) => {
+    const { data } = await axios(`${url}/${pokemonId}`);
+    dispatch({
+      type: actionTypes.LOAD_POKEMON,
+      pokemon: data
+    });
   };
 }
 
@@ -51,5 +45,31 @@ export default function userLogin(email, password) {
         type: actionTypes.LOGIN_ERROR
       });
     }
+  };
+}
+
+export function addToCart(product) {
+  return {
+    type: actionTypes.ADD_PRODUCT_CART,
+    product
+  };
+}
+export function loadCart() {
+  return {
+    type: actionTypes.LOAD_CART
+  };
+}
+
+export function deleteProduct(product) {
+  const productToDelete = { ...product };
+  return {
+    type: actionTypes.DELETE_PRODUCT,
+    product: productToDelete
+  };
+}
+export function decreaseProduct(product) {
+  return {
+    type: actionTypes.DECREASE_PRODUCT,
+    product
   };
 }

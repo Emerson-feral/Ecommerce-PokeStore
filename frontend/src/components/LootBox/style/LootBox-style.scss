@@ -7,11 +7,13 @@
 .lootBox{
    display: flex;
    justify-content: center;
-    img{
+    
+   &-image{
         border-radius: 10px;
-        margin-top: 1em;
-        width: 90vw;
+        margin: 1em;
+        width: 80vw;
         border: solid 1.8px black;
+    
     }
 }
 

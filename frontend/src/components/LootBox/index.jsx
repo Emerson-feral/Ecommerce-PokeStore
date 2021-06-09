@@ -1,14 +1,15 @@
 /* eslint-disable no-underscore-dangle */
-/* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { loadPokemons } from '../../redux/actions/actionCreators';
 import './style/LootBox-style.css';
 
-function LootBox({ pokemons, dispatch }) {
+function LootBox() {
+  const dispatch = useDispatch();
+  const pokemons = useSelector((store) => store.pokemons);
   useEffect(() => {
-    if (!pokemons.length)dispatch(loadPokemons());
+    if (!pokemons?.length)dispatch(loadPokemons());
   }, []);
 
   let currentPokemon;
@@ -24,7 +25,7 @@ function LootBox({ pokemons, dispatch }) {
       </div>
       <div className="lootBox">
         <Link to={`/detail/${currentPokemon?._id}`}>
-          <img src="https://i.ibb.co/HggfnHV/who-Ist-This-Pokemon.webp" alt="who-Ist-This-Pokemon" />
+          <img className="lootBox-image" src="https://i.ibb.co/HggfnHV/who-Ist-This-Pokemon.webp" alt="who-Ist-This-Pokemon" />
         </Link>
       </div>
       ;
@@ -32,8 +33,4 @@ function LootBox({ pokemons, dispatch }) {
   );
 }
 
-function mapStateToProps({ pokemons }) {
-  return { pokemons };
-}
-
-export default connect(mapStateToProps)(LootBox);
+export default LootBox;

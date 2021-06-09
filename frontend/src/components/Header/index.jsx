@@ -2,9 +2,12 @@ import React from 'react';
 import {
   Link
 } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './style/Header-style.css';
 
 function Header() {
+  const cart = useSelector((store) => store.cart);
+
   return (
     <header>
       <nav className="navBar">
@@ -13,7 +16,11 @@ function Header() {
       </nav>
       <div className="cart">
         <button type="button">Login</button>
-        <button type="button">Cart</button>
+        <p>
+          {cart?.quantity}
+          {' '}
+        </p>
+        <Link to="/ShoppingCart">Cart</Link>
       </div>
     </header>
   );

@@ -5,10 +5,10 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 7em;
+  height: 40vh;
 }
 
-.Carousel img {
+.Carousel-image {
   height: 10em;
 }
 /*# sourceMappingURL=Carousel-style.css.map */
