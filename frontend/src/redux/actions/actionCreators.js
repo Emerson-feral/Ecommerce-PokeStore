@@ -53,3 +53,15 @@ export default function userLogin(email, password) {
     }
   };
 }
+
+export function addToCart(product) {
+  return {
+    type: actionTypes.ADD_PRODUCT_CART,
+    product
+  };
+}
+export function loadCart() {
+  return {
+    type: actionTypes.LOAD_CART
+  };
+}

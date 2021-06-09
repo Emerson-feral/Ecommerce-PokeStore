@@ -13,7 +13,7 @@ function Header() {
       </nav>
       <div className="cart">
         <button type="button">Login</button>
-        <button type="button">Cart</button>
+        <Link to="/ShoppingCart">Cart</Link>
       </div>
     </header>
   );

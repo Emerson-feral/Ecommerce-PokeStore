@@ -11,9 +11,10 @@ import ProductList from './components/ProductList';
 import ProductDetail from './components/ProductDetail';
 import Carousel from './components/Carousel';
 import LootBox from './components/LootBox';
-import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ShoppingCart from './components/ShoppingCart';
+import './App.css';
 
 function App() {
   return (
@@ -25,15 +26,18 @@ function App() {
             <Carousel />
             <LootBox />
           </Route>
-          <Route exact path="/login">
+          <Route exact path="/Login">
             <Login />
           </Route>
           <Route path="/Home" />
           <Route path="/Productlist">
             <ProductList />
           </Route>
-          <Route path="/detail/:pokemonId">
+          <Route path="/Detail/:pokemonId">
             <ProductDetail />
+          </Route>
+          <Route path="/ShoppingCart">
+            <ShoppingCart />
           </Route>
         </Switch>
         <Footer />

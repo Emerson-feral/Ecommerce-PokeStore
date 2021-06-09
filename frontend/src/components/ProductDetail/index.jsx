@@ -1,8 +1,7 @@
-/* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getPokemonById } from '../../redux/actions/actionCreators';
+import { getPokemonById, addToCart } from '../../redux/actions/actionCreators';
 import './style/ProductDetail-style.css';
 
 function ProductDetail() {
@@ -13,7 +12,6 @@ function ProductDetail() {
   useEffect(() => {
     dispatch(getPokemonById(pokemonId));
   }, [pokemonId]);
-
   return (
     <div className="detail-container">
       <div className="detail-container__image">
@@ -34,7 +32,7 @@ function ProductDetail() {
         <p className="information-container__price">
           {`Price: ${selectedPokemon.price}`}
         </p>
-        <button type="button">Add to cart</button>
+        <button type="button" onClick={() => dispatch(addToCart(selectedPokemon))}>Add to cart</button>
       </div>
     </div>
   );
