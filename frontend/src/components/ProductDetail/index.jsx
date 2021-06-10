@@ -9,6 +9,8 @@ function ProductDetail() {
   const selectedPokemon = useSelector((store) => store.selectedPokemon);
   const { pokemonId } = useParams();
 
+  console.log(pokemonId);
+
   useEffect(() => {
     dispatch(getPokemonById(pokemonId));
   }, [pokemonId]);

@@ -1,3 +1,14 @@
+@media (min-width: 375px) {
+  .cart a {
+    text-align: center;
+    font-size: 0.8em;
+  }
+  .navBar a {
+    text-align: center;
+    font-size: 0.8em;
+  }
+}
+
 header {
   background-color: #ff1f1f;
   display: -webkit-box;
@@ -13,14 +24,34 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 100%;
+  width: 100;
 }
 
 .navBar {
-  margin-left: 20px;
+  margin-left: 0.3em;
 }
 
 .navBar a {
+  font-weight: bolder;
+  padding: 0.5em;
+  text-decoration: none;
+  margin-right: 5px;
+  background-color: #5db9ff;
+  border: #3d3d3d 1px solid;
+  border-radius: 4px;
+}
+
+.cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.cart a {
+  font-weight: bolder;
   padding: 0.5em;
   text-decoration: none;
   margin-right: 5px;

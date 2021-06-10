@@ -1,5 +1,21 @@
 @import '../../../style/color';
 
+@media(min-width:375px){
+    .cart{
+        a{
+            text-align: center;
+            font-size: 0.8em;
+        }
+    }
+
+    .navBar{
+        a{
+            text-align: center;
+            font-size: 0.8em;
+        }
+    }
+}
+
 header{
     background-color: $red-pokemon;
     display: flex;
@@ -8,12 +24,29 @@ header{
     top: 0;
     height: 5em;
     justify-content: space-between;
-    width:100% ;
+    width:100;
 }
 
 .navBar {
-    margin-left: 20px;
+    margin-left: 0.3em;
     a{
+        font-weight: bolder;
+        padding: 0.5em;
+        text-decoration: none;
+        margin-right: 5px;
+        background-color: $lightBlue-pokemon;
+        border: #3d3d3d 1px solid;
+        border-radius: 4px;
+    }
+}
+
+.cart{
+    display: flex;
+    justify-content: flex-end;
+
+    a{
+
+        font-weight: bolder;
         padding: 0.5em;
         text-decoration: none;
         margin-right: 5px;

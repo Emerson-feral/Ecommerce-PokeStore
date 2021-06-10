@@ -8,8 +8,10 @@ import './style/LootBox-style.css';
 function LootBox() {
   const dispatch = useDispatch();
   const pokemons = useSelector((store) => store.pokemons);
+  const loggedUser = useSelector(({ user }) => user);
+
   useEffect(() => {
-    if (!pokemons?.length)dispatch(loadPokemons());
+    if (!pokemons?.length) dispatch(loadPokemons(loggedUser));
   }, []);
 
   let currentPokemon;
@@ -28,7 +30,6 @@ function LootBox() {
           <img className="lootBox-image" src="https://i.ibb.co/HggfnHV/who-Ist-This-Pokemon.webp" alt="who-Ist-This-Pokemon" />
         </Link>
       </div>
-      ;
     </>
   );
 }
