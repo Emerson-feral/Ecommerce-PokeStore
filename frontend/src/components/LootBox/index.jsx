@@ -15,8 +15,8 @@ function LootBox() {
   }, []);
 
   let currentPokemon;
-  if (pokemons !== null) {
-    const randomPokemon = Math.floor(Math.random() * pokemons.length);
+  if (pokemons.pokemons !== null) {
+    const randomPokemon = Math.floor(Math.random() * pokemons.pokemons.length);
     currentPokemon = pokemons[randomPokemon];
   }
 

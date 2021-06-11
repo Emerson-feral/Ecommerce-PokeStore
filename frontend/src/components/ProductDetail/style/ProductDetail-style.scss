@@ -27,6 +27,7 @@
     } 
 }
 
+
 .information-container{
     width: 65vw;
     margin: 0.5em;
@@ -38,7 +39,7 @@
     &__button{
         cursor:pointer;
         text-decoration: none;
-        background-color: $yellow-pokemon;
+        background-color:$yellow-pokemon;
         width: 25vw;
         height: 5vh;
         border: #3d3d3d 1px solid;

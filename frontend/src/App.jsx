@@ -29,8 +29,8 @@ function App() {
           <Route exact path="/Login">
             <Login />
           </Route>
-          <Route path="/Home" />
-          <Route path="/Productlist">
+          <Route path="/home" />
+          <Route path="/productlist">
             <ProductList />
           </Route>
           <Route path="/Detail/:pokemonId">

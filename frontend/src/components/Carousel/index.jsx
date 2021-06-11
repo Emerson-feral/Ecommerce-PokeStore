@@ -16,9 +16,9 @@ function Slider() {
   }, []);
 
   return (
-    <Carousel className="Carousel">
+    <Carousel className="Carousel-container">
       {
-        pokemons.slice(1, 4).map((pokemon) => (
+        pokemons.pokemons.slice(1, 4).map((pokemon) => (
           <Link key={pokemon._id} to={`/detail/${pokemon._id}`}>
             <img className="Carousel-image" src={pokemon.avatarImage} alt={pokemon.name} />
           </Link>

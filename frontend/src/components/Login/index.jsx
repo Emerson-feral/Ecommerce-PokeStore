@@ -1,4 +1,3 @@
-/* eslint-disable import/no-cycle */
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
@@ -25,7 +24,7 @@ function Login() {
 
   return (
 
-    !user?.token
+    !user.token
       ? (
         <>
           <div className="login-container">
