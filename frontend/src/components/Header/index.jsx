@@ -9,7 +9,7 @@ function Header() {
   const cart = useSelector((store) => store.cart);
   return (
     <header className="header-container">
-      <nav className="header-container__navBar">
+      <nav>
         <Link className="header-container__link" to="/">Home</Link>
         <Link className="header-container__link" to="/Productlist">Products</Link>
       </nav>

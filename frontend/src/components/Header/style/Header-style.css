@@ -3,13 +3,13 @@
     text-align: center;
     font-size: 0.8em;
   }
-  .navBar a {
+  .header-container__link {
     text-align: center;
     font-size: 0.8em;
   }
 }
 
-header {
+.header-container {
   background-color: #ff1f1f;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -24,14 +24,10 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 100;
+  width: 100vw;
 }
 
-.navBar {
-  margin-left: 0.3em;
-}
-
-.navBar a {
+.header-container__link {
   font-weight: bolder;
   padding: 0.5em;
   text-decoration: none;

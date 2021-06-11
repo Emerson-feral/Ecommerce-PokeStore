@@ -1,16 +1,9 @@
 .Carousel-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   height: 30vh;
   width: 100vw;
 }
 
-.Carousel-image {
-  height: 25vh;
+.Carousel-container-image {
   -o-object-fit: contain;
      object-fit: contain;
 }

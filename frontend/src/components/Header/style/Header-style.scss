@@ -8,12 +8,14 @@
         }
     }
 
-    .navBar{
-        a{
+    .header-container{
+        &__link{
             text-align: center;
             font-size: 0.8em;
         }
     }
+
+
 }
 
 .header-container{
@@ -24,12 +26,9 @@
     top: 0;
     height: 5em;
     justify-content: space-between;
-    width:100;
-}
+    width:100vw;
 
-.navBar {
-    margin-left: 0.3em;
-    a{
+    &__link{
         font-weight: bolder;
         padding: 0.5em;
         text-decoration: none;
@@ -40,12 +39,11 @@
     }
 }
 
+
 .cart{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
-   
 
     &-list{
         

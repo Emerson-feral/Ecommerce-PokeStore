@@ -9,10 +9,10 @@ function ProductDetail() {
   const selectedPokemon = useSelector((store) => store.selectedPokemon);
   const { pokemonId } = useParams();
 
-  const { pokemonId } = useParams();
   useEffect(() => {
     dispatch(getPokemonById(pokemonId));
   }, [pokemonId]);
+
   return (
     <div className="detail-container">
       <div className="image-container">
@@ -20,18 +20,18 @@ function ProductDetail() {
       </div>
       <div className="information-container">
         <h2 className="information-container__title">
-          {pokemon.selectedPokemon.name}
+          {selectedPokemon.name}
           {' '}
         </h2>
         <p className="information-container__description">
-          {pokemon.selectedPokemon.description}
+          {selectedPokemon.description}
           {' '}
         </p>
         <p className="information-container__type">
-          {`Type: ${pokemon.selectedPokemon.type}`}
+          {`Type: ${selectedPokemon.type}`}
         </p>
         <p className="information-container__price">
-          {`Price: ${pokemon.selectedPokemon.price}`}
+          {`Price: ${selectedPokemon.price}`}
         </p>
         <button className="information-container__button" type="button" onClick={() => dispatch(addToCart(selectedPokemon))}>Add to cart</button>
       </div>
