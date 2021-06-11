@@ -38,7 +38,7 @@ function Login() {
       )
 
       : (
-        <Redirect to="/" />
+        <Redirect to="/ShoppingCart" />
       )
   );
 }

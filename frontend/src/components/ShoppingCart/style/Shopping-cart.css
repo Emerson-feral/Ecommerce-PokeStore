@@ -1,11 +1,5 @@
-@media (max-width: 375px) {
-  .empty-container {
-    background-size: auto 100%;
-  }
-}
-
 .empty-container {
-  height: 100vh;
+  height: 90vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13,7 +7,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   background-image: url("https://i.ibb.co/v3JWj0H/sad-Cart-Invert.jpg");
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -38,6 +32,10 @@
           align-items: center;
 }
 
+.cartlist-container__title {
+  margin-top: 1.5em;
+}
+
 .products-container {
   border-spacing: 1px;
 }
@@ -59,6 +57,7 @@
 }
 
 .products-container__button {
+  cursor: pointer;
   padding: 0.2em;
   width: 1.7em;
   text-decoration: none;
@@ -69,6 +68,7 @@
 }
 
 .products-container__button--remove {
+  cursor: pointer;
   padding: 0.2em;
   text-decoration: none;
   margin-right: 5px;

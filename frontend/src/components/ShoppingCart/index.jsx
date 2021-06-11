@@ -1,17 +1,24 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import {
   addToCart, loadCart, deleteProduct, decreaseProduct
 } from '../../redux/actions/actionCreators';
 import './style/Shopping-cart.css';
 
 function ShoppingCart() {
+  const history = useHistory();
   const dispatch = useDispatch();
   const cart = useSelector((store) => store.cart);
+  const user = useSelector((store) => store.user);
 
   useEffect(() => {
     dispatch(loadCart());
+  }, []);
+
+  useEffect(() => {
+    if (!user.token)history.push('/login');
   }, []);
 
   return (

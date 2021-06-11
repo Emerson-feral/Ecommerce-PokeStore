@@ -1,4 +1,4 @@
-@import '../../../style/color';
+@import './../../../style/colors/color';
 
 @media(min-width:375px){
     .cart{
@@ -43,15 +43,26 @@ header{
 .cart{
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 
-    a{
+   
 
-        font-weight: bolder;
-        padding: 0.5em;
-        text-decoration: none;
-        margin-right: 5px;
-        background-color: $lightBlue-pokemon;
-        border: #3d3d3d 1px solid;
-        border-radius: 4px;
+    &-list{
+        
+        &__login{
+            font-weight: bolder;
+            padding: 0.5em;
+            text-decoration: none;
+            margin-right: 5px;
+            background-color: $lightBlue-pokemon;
+            border: #3d3d3d 1px solid;
+            border-radius: 4px;
+        }
+        
+        &__pokeball{
+            
+            width: 30px;
+            height: 30px;
+        }
     }
 }
