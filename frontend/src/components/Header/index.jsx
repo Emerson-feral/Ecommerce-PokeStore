@@ -20,7 +20,7 @@ function Header() {
           {' '}
         </p>
         <Link className="cart-list" to="/ShoppingCart">
-          <img className="cart-list__pokeball" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/768px-Pok%C3%A9_Ball_icon.svg.png" alt="pokeball" />
+          <img className="cart-list__pokeball" src="https://i.ibb.co/LzTDwQX/Pok-Ball-icon-svg.png" alt="pokeballCart" />
         </Link>
       </div>
     </header>
