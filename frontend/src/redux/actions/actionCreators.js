@@ -47,3 +47,29 @@ export default function userLogin(email, password) {
     }
   };
 }
+
+export function addToCart(product) {
+  return {
+    type: actionTypes.ADD_PRODUCT_CART,
+    product
+  };
+}
+export function loadCart() {
+  return {
+    type: actionTypes.LOAD_CART
+  };
+}
+
+export function deleteProduct(product) {
+  const productToDelete = { ...product };
+  return {
+    type: actionTypes.DELETE_PRODUCT,
+    product: productToDelete
+  };
+}
+export function decreaseProduct(product) {
+  return {
+    type: actionTypes.DECREASE_PRODUCT,
+    product
+  };
+}

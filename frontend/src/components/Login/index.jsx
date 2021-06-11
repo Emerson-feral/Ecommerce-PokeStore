@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import userLogin from '../../redux/actions/actionCreators';
 import './style/Login-style.css';
 
 function Login() {
   const dispatch = useDispatch();
-  const authUser = useSelector(({ user }) => ({ user }));
-
+  const user = useSelector((store) => store.user);
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
 
@@ -25,7 +24,7 @@ function Login() {
 
   return (
 
-    !authUser.user.token
+    !user.token
       ? (
         <>
           <div className="login-container">
@@ -38,7 +37,7 @@ function Login() {
       )
 
       : (
-        <Redirect to="/" />
+        <Redirect to="/ShoppingCart" />
       )
   );
 }

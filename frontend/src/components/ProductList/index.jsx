@@ -1,13 +1,16 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { PropTypes } from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
 import { loadPokemons } from '../../redux/actions/actionCreators';
 import './style/ProductList-style.css';
 
-function ProductList({ pokemons, dispatch, user }) {
+function ProductList() {
+  const dispatch = useDispatch();
+  const pokemons = useSelector((store) => store.pokemons);
+  const user = useSelector((store) => store.user);
   const [typePokemon, setTypePokemon] = useState(null);
+
   useEffect(() => {
     if (!pokemons.length)dispatch(loadPokemons(user));
   }, []);
@@ -22,7 +25,7 @@ function ProductList({ pokemons, dispatch, user }) {
     <>
       <div className="filter-container">
         <select className="filter-container__select" onChange={(e) => handleClickFilter(e.target.value)}>
-          <option>Type</option>
+          <option value="">Type</option>
           {
                 uniqueType?.map((type) => <option value={type}>{type}</option>)
               }
@@ -53,7 +56,7 @@ function ProductList({ pokemons, dispatch, user }) {
                   pokemons.filter((item) => item.type === typePokemon).map((pokemon) => (
                     <Link to={`detail/${pokemon._id}`}>
                       {' '}
-                      <li>
+                      <li className="pokemonlist-container__list" key={pokemon._id}>
                         <img className="pokemonlist-container__image" src={pokemon.avatarImage} alt={pokemon.name} />
                       </li>
                       {' '}
@@ -69,17 +72,4 @@ function ProductList({ pokemons, dispatch, user }) {
   );
 }
 
-ProductList.propTypes = {
-  pokemons: PropTypes.shape([{}]).isRequired,
-  user: PropTypes.shape([{}]).isRequired,
-  dispatch: PropTypes.func.isRequired
-};
-
-function mapStateToProps({ pokemons, user }) {
-  return {
-    pokemons,
-    user
-  };
-}
-
-export default connect(mapStateToProps)(ProductList);
+export default ProductList;

@@ -1,21 +1,23 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { loadPokemons } from '../../redux/actions/actionCreators';
 import './style/LootBox-style.css';
 
 function LootBox() {
   const dispatch = useDispatch();
-  const allPokemons = useSelector(({ pokemons }) => ({ pokemons }));
+  const pokemons = useSelector((store) => store.pokemons);
+  const loggedUser = useSelector(({ user }) => user);
+
   useEffect(() => {
-    if (!allPokemons.pokemons.length)dispatch(loadPokemons());
+    if (!pokemons?.length) dispatch(loadPokemons(loggedUser));
   }, []);
 
   let currentPokemon;
-  if (allPokemons.pokemons !== null) {
-    const randomPokemon = Math.floor(Math.random() * allPokemons.pokemons.length);
-    currentPokemon = allPokemons.pokemons[randomPokemon];
+  if (pokemons.pokemons !== null) {
+    const randomPokemon = Math.floor(Math.random() * pokemons.pokemons.length);
+    currentPokemon = pokemons[randomPokemon];
   }
 
   return (
@@ -25,10 +27,9 @@ function LootBox() {
       </div>
       <div className="lootBox">
         <Link to={`/detail/${currentPokemon?._id}`}>
-          <img src="https://i.ibb.co/HggfnHV/who-Ist-This-Pokemon.webp" alt="who-Ist-This-Pokemon" />
+          <img className="lootBox-image" src="https://i.ibb.co/HggfnHV/who-Ist-This-Pokemon.webp" alt="who-Ist-This-Pokemon" />
         </Link>
       </div>
-      ;
     </>
   );
 }

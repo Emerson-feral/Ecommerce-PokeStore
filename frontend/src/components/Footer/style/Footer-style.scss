@@ -1,8 +1,8 @@
-@import '../../../style/color';
+@import './../../../style/colors/color';
 
 .footer-container{
     display: flex;
-    position: sticky;
+    position: fixed;
     bottom: 0;
     justify-content: center;
     align-items: center;

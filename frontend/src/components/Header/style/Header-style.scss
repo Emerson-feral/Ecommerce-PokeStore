@@ -1,4 +1,20 @@
-@import '../../../style/color';
+@import './../../../style/colors/color';
+
+@media(min-width:375px){
+    .cart{
+        a{
+            text-align: center;
+            font-size: 0.8em;
+        }
+    }
+
+    .navBar{
+        a{
+            text-align: center;
+            font-size: 0.8em;
+        }
+    }
+}
 
 .header-container{
     background-color: $red-pokemon;
@@ -8,14 +24,13 @@
     top: 0;
     height: 5em;
     justify-content: space-between;
-    width:100% ;
-    
-    &__navBar {
-        margin-left: 20px;
-        
-    }
-    
-    &__link{
+    width:100;
+}
+
+.navBar {
+    margin-left: 0.3em;
+    a{
+        font-weight: bolder;
         padding: 0.5em;
         text-decoration: none;
         margin-right: 5px;
@@ -25,3 +40,29 @@
     }
 }
 
+.cart{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+   
+
+    &-list{
+        
+        &__login{
+            font-weight: bolder;
+            padding: 0.5em;
+            text-decoration: none;
+            margin-right: 10px;
+            background-color: $lightBlue-pokemon;
+            border: #3d3d3d 1px solid;
+            border-radius: 4px;
+        }
+        
+        &__pokeball{
+            
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
