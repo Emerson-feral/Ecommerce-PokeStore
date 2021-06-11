@@ -5,10 +5,17 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 40vh;
+  height: 30vh;
+  width: 100vw;
 }
 
 .Carousel-image {
-  height: 10em;
+  height: 25vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.jCKguF {
+  width: 60vw;
 }
 /*# sourceMappingURL=Carousel-style.css.map */

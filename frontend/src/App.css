@@ -1,9 +1,18 @@
-*{
-    padding: 0;
-    margin: 0;
+@font-face {
+  font-family: 'Pokemon';
+  src: local("Pokemon"), url(./style/font/PokemonGb-RAeo.ttf) format("truetype");
 }
 
-body{
-    min-width: 375px;
-    min-height: 658px;
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Pokemon,serif;
 }
+
+body {
+  min-width: 375px;
+  min-height: 658px;
+  max-width: 1920px;
+  max-height: 1080px;
+}
+/*# sourceMappingURL=App.css.map */

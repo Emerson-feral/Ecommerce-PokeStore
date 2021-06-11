@@ -1,5 +1,5 @@
 .container-title {
-  margin-top: 0.5em;
+  margin-top: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,12 +15,16 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: 45vh;
 }
 
 .lootBox-image {
+  height: 90%;
+  -o-object-fit: fill;
+     object-fit: fill;
   border-radius: 10px;
   margin: 1em;
-  width: 80vw;
   border: solid 1.8px black;
+  width: 65vw;
 }
 /*# sourceMappingURL=LootBox-style.css.map */

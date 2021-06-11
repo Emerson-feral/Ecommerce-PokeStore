@@ -1,10 +1,15 @@
 .Carousel{
     display: flex;
     justify-content: center;
-    height: 40vh;
+    height: 30vh;
+    width: 100vw;
 
     
     &-image{
-        height: 10em;
+        height: 25vh;
+        object-fit: contain;
     }
+}
+.jCKguF{
+    width: 60vw;
 }

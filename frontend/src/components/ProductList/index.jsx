@@ -25,7 +25,7 @@ function ProductList() {
     <>
       <div className="filter-container">
         <select className="filter-container__select" onChange={(e) => handleClickFilter(e.target.value)}>
-          <option>Type</option>
+          <option value="">Type</option>
           {
                 uniqueType?.map((type) => <option value={type}>{type}</option>)
               }

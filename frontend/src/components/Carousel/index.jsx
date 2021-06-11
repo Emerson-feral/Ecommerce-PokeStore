@@ -9,8 +9,10 @@ import './styles/Carousel-style.css';
 function Slider() {
   const dispatch = useDispatch();
   const pokemons = useSelector((store) => store.pokemons);
+  const loggedUser = useSelector(({ user }) => user);
+
   useEffect(() => {
-    if (!pokemons.length)dispatch(loadPokemons());
+    if (!pokemons.length)dispatch(loadPokemons(loggedUser));
   }, []);
 
   return (

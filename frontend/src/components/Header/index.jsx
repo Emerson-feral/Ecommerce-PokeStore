@@ -1,13 +1,12 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import {
   Link
 } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import './style/Header-style.css';
 
 function Header() {
   const cart = useSelector((store) => store.cart);
-
   return (
     <header>
       <nav className="navBar">
@@ -15,12 +14,14 @@ function Header() {
         <Link to="/Productlist">Products</Link>
       </nav>
       <div className="cart">
-        <button type="button">Login</button>
+        <Link className="cart-list__login" to="/Login">Login</Link>
         <p>
-          {cart?.quantity}
+          {cart.length}
           {' '}
         </p>
-        <Link to="/ShoppingCart">Cart</Link>
+        <Link className="cart-list" to="/ShoppingCart">
+          <img className="cart-list__pokeball" src="https://i.ibb.co/LzTDwQX/Pok-Ball-icon-svg.png" alt="pokeballCart" />
+        </Link>
       </div>
     </header>
   );
