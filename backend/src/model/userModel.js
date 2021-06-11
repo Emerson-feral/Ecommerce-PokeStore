@@ -4,7 +4,7 @@ const userSchema = Schema({
   email: String,
   nickname: String,
   password: String,
-  wishlist: [String]
+  wishlist: [{ type: Schema.ObjectId, ref: 'Pokemons' }]
 });
 
 userSchema.methods.isValidPassword = function isValidPassword(password) {

@@ -3,7 +3,7 @@ const cors = require('cors');
 const chalk = require('chalk');
 const debug = require('debug')('server');
 const morgan = require('morgan');
-const passport = require('passport');
+/* const passport = require('passport'); */
 const authRoutes = require('./routes/authRoutes');
 
 require('dotenv').config();

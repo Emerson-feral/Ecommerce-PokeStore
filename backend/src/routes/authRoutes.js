@@ -2,6 +2,7 @@
 const passport = require('passport');
 const { Router } = require('express');
 const jwt = require('jsonwebtoken');
+const User = require('../model/userModel');
 
 let refreshTokens = [];
 const authRoutes = Router();
@@ -96,6 +97,32 @@ authRoutes.post('/logout', (req, res) => {
   refreshTokens = refreshTokens.filter((current) => current !== token);
 
   res.send('Logout successful');
+});
+
+authRoutes.put('/:userId', async (req, res) => {
+  try {
+    const updatedUser = await User.findByIdAndUpdate(
+      req.params.userId,
+      req.body,
+      { new: true }
+    );
+    res.json(updatedUser);
+  } catch (error) {
+    res.send(error);
+  }
+});
+
+authRoutes.get('/:userId', async (req, res) => {
+  try {
+    const getUserById = await User.findById(
+      req.params.userId
+    )
+      .populate('wishlist');
+
+    res.json(getUserById);
+  } catch (error) {
+    res.send(error);
+  }
 });
 
 module.exports = authRoutes;
