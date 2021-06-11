@@ -1,15 +1,11 @@
 .Carousel-container{
-
     height: 30vh;
-    width: 100vw;
-
-    
-    &-image{
+   
         
-        object-fit: contain;
-       
+    &__image{
+        width: auto;
+        height: 25vh;
+        object-fit: cover;
     }
 }
-.jCKguF{
-    width: 60vw;
-}
+

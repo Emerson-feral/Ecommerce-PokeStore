@@ -1,14 +1,11 @@
 .Carousel-container {
   height: 30vh;
-  width: 100vw;
 }
 
-.Carousel-container-image {
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
-.jCKguF {
-  width: 60vw;
+.Carousel-container__image {
+  width: auto;
+  height: 25vh;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 /*# sourceMappingURL=Carousel-style.css.map */
