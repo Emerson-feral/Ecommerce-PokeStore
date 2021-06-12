@@ -32,7 +32,7 @@ export function getPokemonById(pokemonId) {
   };
 }
 
-export default function userLogin(email, password) {
+export function userLogin(email, password) {
   return async (dispatch) => {
     try {
       const { data } = await axios.post(URL_LOGIN, { email, password });
