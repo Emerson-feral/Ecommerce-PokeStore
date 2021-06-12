@@ -2,8 +2,8 @@ const User = require('../model/userModel');
 
 function userController() {
   async function getAll(req, res) {
-    const pokemons = await User.find();
-    res.json(pokemons);
+    const users = await User.find();
+    res.json(users);
   }
 
   async function createOne(req, res) {
