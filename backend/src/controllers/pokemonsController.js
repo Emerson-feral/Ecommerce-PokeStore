@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-const debug = require('debug')('app:heroesController');
+const debug = require('debug')('server:pokemonsController');
 const Pokemon = require('../model/pokemonModel');
 
 function pokemonsController() {
