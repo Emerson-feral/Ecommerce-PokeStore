@@ -1,4 +1,3 @@
-/* import axios from 'axios'; */
 import axios from 'axios';
 import {
   loadPokemons, userLogin, loadCart, getPokemonById, addToCart, deleteProduct, decreaseProduct
@@ -37,18 +36,6 @@ describe('loadPokemons', () => {
   });
 });
 
-describe('userLogin', () => {
-  test('should dispatch LOGIN_ERROR', async () => {
-    const dispatch = jest.fn();
-    axios.mockRejectedValue();
-    await userLogin()(dispatch);
-
-    expect(dispatch).toHaveBeenCalledWith({
-      type: actionTypes.LOGIN_ERROR
-    });
-  });
-});
-
 describe('getPokemonById', () => {
   test('should get getPokemonById', async () => {
     const dispatch = jest.fn();
@@ -62,10 +49,14 @@ describe('getPokemonById', () => {
   });
 });
 
-describe('loadCart', () => {
-  test('should load cart', () => {
-    expect(loadCart()).toStrictEqual({
-      type: actionTypes.LOAD_CART
+describe('userLogin', () => {
+  test('should dispatch LOGIN_ERROR', async () => {
+    const dispatch = jest.fn();
+    axios.mockRejectedValue();
+    await userLogin()(dispatch);
+
+    expect(dispatch).toHaveBeenCalledWith({
+      type: actionTypes.LOGIN_ERROR
     });
   });
 });
@@ -77,6 +68,14 @@ describe('addToCart', () => {
     addToCart(data);
 
     expect(data).toBe('pokemon');
+  });
+});
+
+describe('loadCart', () => {
+  test('should load cart', () => {
+    expect(loadCart()).toStrictEqual({
+      type: actionTypes.LOAD_CART
+    });
   });
 });
 
