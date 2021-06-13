@@ -81,10 +81,10 @@ describe('loadCart', () => {
 
 describe('deleteProduct', () => {
   test('should remove from cart', () => {
-    const product = 'pokemon';
+    const product = {};
 
     expect(deleteProduct(product)).toStrictEqual({
-      type: actionTypes.DECREASE_PRODUCT,
+      type: actionTypes.DELETE_PRODUCT,
       product
     });
   });

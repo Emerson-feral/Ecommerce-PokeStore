@@ -14,7 +14,7 @@ function ProductDetail() {
   }, [pokemonId]);
 
   return (
-    <div className="detail-container">
+    <div title="detail" className="detail-container">
       <div className="image-container">
         <img className="image-container__item" src={selectedPokemon.avatarImage} alt={selectedPokemon.name} />
       </div>

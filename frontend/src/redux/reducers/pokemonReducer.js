@@ -1,5 +1,4 @@
 import actionTypes from '../actions/actionTypes';
-/* import POKEMONS from '../../constants/mockPokemons'; */
 
 function pokemonReducer(pokemons = [], action) {
   switch (action.type) {
