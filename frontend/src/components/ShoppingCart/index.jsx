@@ -56,7 +56,7 @@ function ShoppingCart() {
                         type="button"
                         id={item._id}
                         onClick={() => {
-                          if (item.quantity === 0) {
+                          if (item.quantity <= 1) {
                             dispatch(deleteProduct(item));
                           } else {
                             dispatch(decreaseProduct(item));

@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import cartReducer from './cartReducer';
 import pokemonReducer from './pokemonReducer';
 import selectedPokemonReducer from './selectedPokemonReducer';
-import usersReducer from './userReducer';
+import usersReducer from './usersReducer';
 
 const rootReducer = combineReducers({
   pokemons: pokemonReducer,

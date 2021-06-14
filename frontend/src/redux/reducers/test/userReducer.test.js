@@ -1,5 +1,5 @@
 import actionTypes from '../../actions/actionTypes';
-import usersReducer from '../userReducer';
+import usersReducer from '../usersReducer';
 
 describe('usersReducer', () => {
   test('should return a new object', () => {

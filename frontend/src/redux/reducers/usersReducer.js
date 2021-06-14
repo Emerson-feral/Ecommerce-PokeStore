@@ -1,11 +1,9 @@
 import actionTypes from '../actions/actionTypes';
 
 function usersReducer(user = {}, action) {
-  switch (action.type) {
-    case actionTypes.LOGIN:
-      return action.user;
-    default:
-      return user;
+  if (action.type === actionTypes.LOGIN) {
+    return action.user;
   }
+  return user;
 }
 export default usersReducer;

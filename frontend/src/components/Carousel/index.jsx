@@ -17,7 +17,7 @@ function Slider() {
 
   return (
 
-    <Carousel className="Carousel-container">
+    <Carousel title="carousel" className="Carousel-container">
       {
         pokemons.slice(1, 4).map((pokemon) => (
           <Link key={pokemon._id} to={`/detail/${pokemon._id}`}>

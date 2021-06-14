@@ -44,7 +44,8 @@ describe('getPokemonById', () => {
     await getPokemonById()(dispatch);
 
     expect(dispatch).toHaveBeenCalledWith({
-      type: actionTypes.LOAD_POKEMON
+      type: actionTypes.LOAD_POKEMON,
+      pokemon: data
     });
   });
 });

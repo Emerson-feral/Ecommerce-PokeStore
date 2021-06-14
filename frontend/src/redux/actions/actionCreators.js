@@ -2,14 +2,14 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-const url = 'http://localhost:1996/api/pokemons/';
+const URL_API = process.env.REACT_APP_URL_API;
 
-const URL_LOGIN = 'http://localhost:1996/login';
+const URL_LOGIN = process.env.REACT_APP_URL_LOGIN;
 
 export function loadPokemons(user) {
   return async (dispatch) => {
     try {
-      const { data } = await axios(url, { headers: { Authorization: `Bearer ${user.token}` } });
+      const { data } = await axios(URL_API, { headers: { Authorization: `Bearer ${user.token}` } });
       dispatch({
         type: actionTypes.LOAD_POKEMONS,
         pokemons: data
@@ -24,7 +24,7 @@ export function loadPokemons(user) {
 
 export function getPokemonById(pokemonId) {
   return async (dispatch) => {
-    const { data } = await axios(`${url}/${pokemonId}`);
+    const { data } = await axios(`${URL_API}/${pokemonId}`);
     dispatch({
       type: actionTypes.LOAD_POKEMON,
       pokemon: data

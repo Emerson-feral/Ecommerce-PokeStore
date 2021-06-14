@@ -7,13 +7,13 @@ function cartReducer(cart = [], action) {
   let newCart = [...cart];
   switch (action.type) {
     case actionTypes.DELETE_PRODUCT:
-      newCart = cart.filter((item) => item._id !== action.product._id);
+      newCart = cart.filter((product) => product._id !== action.product._id);
       break;
 
     case actionTypes.DECREASE_PRODUCT:
       const itemDecreased = newCart.find(({ _id }) => action.product._id === _id);
       if (itemDecreased) {
-        newCart.map(
+        newCart.forEach(
           (product) => (action.product._id === product._id
             ? { ...product, quantity: itemDecreased.quantity -= 1 }
             : product)

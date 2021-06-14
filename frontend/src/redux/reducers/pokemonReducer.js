@@ -1,13 +1,9 @@
 import actionTypes from '../actions/actionTypes';
 
 function pokemonReducer(pokemons = [], action) {
-  switch (action.type) {
-    case actionTypes.LOAD_POKEMONS:
-      return action.pokemons;
-
-    default:
-      return pokemons;
+  if (action.type === actionTypes.LOAD_POKEMONS) {
+    return action.pokemons;
   }
+  return pokemons;
 }
-
 export default pokemonReducer;
