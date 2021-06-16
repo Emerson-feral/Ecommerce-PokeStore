@@ -61,10 +61,9 @@ export function loadCart() {
 }
 
 export function deleteProduct(product) {
-  const productToDelete = { ...product };
   return {
     type: actionTypes.DELETE_PRODUCT,
-    product: productToDelete
+    product
   };
 }
 export function decreaseProduct(product) {

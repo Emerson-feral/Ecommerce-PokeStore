@@ -1,5 +1,6 @@
 .empty-container {
-  height: 90vh;
+  height: 87vh;
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

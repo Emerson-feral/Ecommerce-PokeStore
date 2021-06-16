@@ -55,6 +55,7 @@ function ShoppingCart() {
                         className="products-container__button"
                         type="button"
                         id={item._id}
+                        data-testid="button-remove"
                         onClick={() => {
                           if (item.quantity <= 1) {
                             dispatch(deleteProduct(item));

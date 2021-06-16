@@ -9,6 +9,7 @@ jest.mock('axios');
 describe('loadPokemons', () => {
   test('should dispatch LOAD_POKEMONS_ERROR', async () => {
     const dispatch = jest.fn();
+
     axios.mockRejectedValue();
     await loadPokemons()(dispatch);
 
@@ -19,19 +20,15 @@ describe('loadPokemons', () => {
 
   test('should dispatch LOAD_POKEMONS', async () => {
     const dispatch = jest.fn();
-    axios.mockResolvedValue({
-      pokemons: {}
-    });
-
-    const user = {
-      token: 'token'
-    };
+    const user = {};
+    const data = [{ name: 'picachu' }];
+    axios.mockResolvedValue({ data });
 
     await loadPokemons(user)(dispatch);
 
     expect(dispatch).toHaveBeenCalledWith({
       type: actionTypes.LOAD_POKEMONS,
-      pokemons: undefined
+      pokemons: [{ name: 'picachu' }]
     });
   });
 });
@@ -40,7 +37,9 @@ describe('getPokemonById', () => {
   test('should get getPokemonById', async () => {
     const dispatch = jest.fn();
     const data = 'emerson';
-    axios.mockResolvedValue(data);
+
+    axios.mockResolvedValue({ data });
+
     await getPokemonById()(dispatch);
 
     expect(dispatch).toHaveBeenCalledWith({
@@ -53,22 +52,39 @@ describe('getPokemonById', () => {
 describe('userLogin', () => {
   test('should dispatch LOGIN_ERROR', async () => {
     const dispatch = jest.fn();
-    axios.mockRejectedValue();
+    axios.post.mockRejectedValue();
     await userLogin()(dispatch);
 
     expect(dispatch).toHaveBeenCalledWith({
       type: actionTypes.LOGIN_ERROR
     });
   });
+
+  test('should dispatch LOGIN', async () => {
+    const dispatch = jest.fn();
+    const email = '';
+    const password = '';
+    const data = [{ token: '12345', refreshToken: '54321' }];
+
+    axios.post.mockResolvedValue({ data });
+
+    await userLogin(email, password)(dispatch);
+
+    expect(dispatch).toHaveBeenCalledWith({
+      type: actionTypes.LOGIN,
+      user: [{ token: '12345', refreshToken: '54321' }]
+    });
+  });
 });
 
 describe('addToCart', () => {
   test('should add to cart', () => {
-    const data = 'pokemon';
+    const product = { name: 'pikachu' };
 
-    addToCart(data);
-
-    expect(data).toBe('pokemon');
+    expect(addToCart(product)).toStrictEqual({
+      type: actionTypes.ADD_PRODUCT_CART,
+      product: { name: 'pikachu' }
+    });
   });
 });
 
@@ -81,13 +97,9 @@ describe('loadCart', () => {
 });
 
 describe('deleteProduct', () => {
-  test('should remove from cart', () => {
-    const product = {};
-
-    expect(deleteProduct(product)).toStrictEqual({
-      type: actionTypes.DELETE_PRODUCT,
-      product
-    });
+  test('Should delete product', () => {
+    const productToDelete = deleteProduct();
+    expect(productToDelete).toEqual({ type: actionTypes.DELETE_PRODUCT });
   });
 });
 
