@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "29850b39-f3e5-4207-843d-71933148cdd7",
+		"name": "Pokemons products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add pokemon",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwYjYzNTYyYmFkNGJkM2YzOGM2YTdjNyIsImVtYWlsIjoiZW1lcnNvbkBnbWFpbC5jb20ifSwiaWF0IjoxNjIzNDIzOTM0fQ.Vg3DKKUYN3Q3nFeb2_iDh5eDRVijFOb33GErlORq0fM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"name\": \"Scyther \",\r\n    \"description\": \"Sus guadañas se vuelven más afiladas con cada combate. Es capaz de rebanar troncos gruesos de un tajo. \",\r\n    \"type\": \"Bug\",\r\n    \"avatarImage\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/123.png\",\r\n    \"price\": 350\r\n}\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1996/api/pokemons/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1996",
+					"path": [
+						"api",
+						"pokemons",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete pokemon",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1996/api/pokemons/60b5fa5f10f2731480601e56",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1996",
+					"path": [
+						"api",
+						"pokemons",
+						"60b5fa5f10f2731480601e56"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All pokemons",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwYjYzNTYyYmFkNGJkM2YzOGM2YTdjNyIsImVtYWlsIjoiZW1lcnNvbkBnbWFpbC5jb20ifSwiaWF0IjoxNjIzNDIzOTM0fQ.Vg3DKKUYN3Q3nFeb2_iDh5eDRVijFOb33GErlORq0fM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:1996/api/pokemons/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1996",
+					"path": [
+						"api",
+						"pokemons",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pokemon by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1996/api/pokemons/60b5fcd610f2731480601e5a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1996",
+					"path": [
+						"api",
+						"pokemons",
+						"60b5fcd610f2731480601e5a"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
