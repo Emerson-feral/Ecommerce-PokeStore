@@ -1,10 +1,10 @@
-![PokeStore logo] (https://i.ibb.co/QnkKPvq/pokestore.png)
+![PokeStore logo](https://i.ibb.co/QnkKPvq/pokestore.png)
 
 # PokeStore
 
 ## Emerson_Final-Project-202104
 
-My project consists in an ecommerce of _Pokemons_**
+My project consists in an ecommerce of **_Pokemons_**
 
 ## Steps to reproduce
 
