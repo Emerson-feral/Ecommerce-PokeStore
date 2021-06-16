@@ -29,9 +29,9 @@ function Login() {
         <>
           <div className="login-container">
             <h2>Login</h2>
-            <input className="login-container__input" type="text" name="email" placeholder="Enter your email" onChange={handleEmail} defaultValue={userEmail} />
-            <input className="login-container__input" type="password" name="name" placeholder="Enter your password" onChange={handlePassword} defaultValue={userPassword} />
-            <button className="login-container__button" type="button" onClick={handleLogin}>login</button>
+            <input className="login-container__input" type="text" name="email" placeholder="Enter your email" data-testid="input-email" onChange={handleEmail} defaultValue={userEmail} />
+            <input className="login-container__input" type="password" name="name" placeholder="Enter your password" data-testid="input-password" onChange={handlePassword} defaultValue={userPassword} />
+            <button className="login-container__button" type="button" data-testid="button-login" onClick={handleLogin}>login</button>
           </div>
         </>
       )

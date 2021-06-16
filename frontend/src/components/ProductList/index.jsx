@@ -15,7 +15,7 @@ function ProductList() {
     if (!pokemons.length)dispatch(loadPokemons(user));
   }, []);
 
-  function handleClickFilter(event) {
+  function handleChangeFilter(event) {
     setTypePokemon(event);
   }
 
@@ -24,13 +24,13 @@ function ProductList() {
   return (
     <>
       <div className="filter-container">
-        <select className="filter-container__select" onChange={(e) => handleClickFilter(e.target.value)}>
+        <select className="filter-container__select" data-testid="filter-select" onChange={(e) => handleChangeFilter(e.target.value)}>
           <option value="">Type</option>
           {
-                uniqueType?.map((type) => <option value={type}>{type}</option>)
+                uniqueType?.map((type) => <option data-testid="change-option" value={type}>{type}</option>)
               }
         </select>
-        <button className="filter-container__button" type="button" onClick={() => setTypePokemon(null)}>Clear</button>
+        <button className="filter-container__button" type="button" data-testid="button-setType" onClick={() => setTypePokemon(null)}>Clear</button>
       </div>
       <div className="yesOrNo">
         {

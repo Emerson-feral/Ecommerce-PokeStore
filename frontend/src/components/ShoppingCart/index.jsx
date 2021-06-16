@@ -46,6 +46,7 @@ function ShoppingCart() {
                         className="products-container__button"
                         type="button"
                         id={item._id}
+                        data-testid="button-add"
                         onClick={() => dispatch(addToCart(item))}
                       >
                         +
@@ -55,7 +56,7 @@ function ShoppingCart() {
                         className="products-container__button"
                         type="button"
                         id={item._id}
-                        data-testid="button-remove"
+                        data-testid="button-decrease"
                         onClick={() => {
                           if (item.quantity <= 1) {
                             dispatch(deleteProduct(item));
@@ -70,6 +71,7 @@ function ShoppingCart() {
                         className="products-container__button--remove"
                         type="button"
                         id={item._id}
+                        data-testid="button-remove"
                         onClick={() => dispatch(deleteProduct(item))}
                       >
                         remove

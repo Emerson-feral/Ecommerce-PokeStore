@@ -3,8 +3,6 @@ import React from 'react';
 import {
   render, screen, fireEvent
 } from '../../../utils/test-utils';
-/* import actionTypes from '../../redux/actions/actionTypes';
-import { deleteProduct } from '../../redux/actions/actionCreators'; */
 import ShoppingCart from './index';
 
 describe('ShoppingCart', () => {
@@ -15,17 +13,32 @@ describe('ShoppingCart', () => {
     expect(carousel.textContent).toBe('Empty cart');
   });
 
-  test.only('deleteFromCart function in invoked', () => {
+  test('should have been called decreaseProduct', () => {
     const initialState = { cart: [{ name: 'pokemon' }] };
 
-    /* const { getByTestId } =  */render(<ShoppingCart />, { initialState });
+    render(<ShoppingCart />, { initialState });
 
-    /* const button = getByTestId('button-remove'); */
-
-    screen.debug();
-    fireEvent.change(screen.getByTestId('button-remove'), {
+    fireEvent.click(screen.getByTestId('button-decrease'), {
       target: { value: 'React' }
     });
-    screen.debug();
+  });
+
+  test('should have been called deleteProduct', () => {
+    const initialState = { cart: [{ name: 'pokemon' }] };
+
+    render(<ShoppingCart />, { initialState });
+
+    fireEvent.click(screen.getByTestId('button-remove'), {
+      target: { value: 'React' }
+    });
+  });
+  test('should have been called addToCart', () => {
+    const initialState = { cart: [{ name: 'pokemon' }] };
+
+    render(<ShoppingCart />, { initialState });
+
+    fireEvent.click(screen.getByTestId('button-add'), {
+      target: { value: 'React' }
+    });
   });
 });
