@@ -4,7 +4,7 @@
 
 ## Emerson_Final-Project-202104
 
-My project consists in an ecommerce of _Pokemons_**
+My project consists in an ecommerce of **_Pokemons_**
 
 ## Steps to reproduce
 
