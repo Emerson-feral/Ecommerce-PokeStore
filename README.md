@@ -1,4 +1,4 @@
-
+![PokeStore logo](https://i.ibb.co/QnkKPvq/pokestore.png)
 
 # PokeStore
 
