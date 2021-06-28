@@ -11,3 +11,4 @@ My project consists in an ecommerce of **_Pokemons_**
 - `npm i` to install all the the dependencies
 - Import postman collection
 - Create `.env` file both of frontend and backend folder and follow the `.env.example` instructions
+- To log in the shopping cart email:`admin@admin.com` password: `admin`
