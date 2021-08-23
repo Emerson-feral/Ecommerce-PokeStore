@@ -6,6 +6,8 @@
 
 My project consists in an ecommerce of **_Pokemons_**
 
+Video demo : https://www.linkedin.com/posts/emerson-fernandes-almeida_ecommerce-react-redux-activity-6812778597829505026-CEni
+
 ## Steps to reproduce
 
 - `npm i` to install all the the dependencies
